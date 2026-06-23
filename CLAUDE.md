@@ -96,7 +96,7 @@ mvn -f /Users/mdproctor/claude/casehub/worker/<module>/pom.xml test
 ## Structure
 
 Multi-module Maven project (Quarkus 3.32.2, Java 21):
-- `api` — Worker, WorkerFunction, Capability, WorkerResult, WorkerOutcome
+- `api` — Worker, WorkerFunction, Capability, WorkerResult, WorkerOutcome, PlannedAction
 - `runtime` — WorkerExecutor with PolicyEnforcer + OTel tracing
 - `testing` — MockWorkerExecutor + TestWorkerBuilder
 
