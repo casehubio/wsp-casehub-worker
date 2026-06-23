@@ -1,0 +1,9 @@
+branch: issue-2-planned-action-worker-result
+project-sha: 820bee3e6c5a6bb82aab419ca542a2850d2b7643
+date: 2026-06-23
+issue: 2
+issue-repo: casehubio/casehub-worker
+covers: 2
+flyway-next-v: none
+design-repo: workspace
+design-section-hashes: 
