@@ -4,14 +4,11 @@
 
 Completed worker#2: PlannedAction record + enriched WorkerResult factories. First real type on the foundation tier. Spec reviewed, implemented via TDD, squashed to 2 commits, pushed to origin/main. Blog published.
 
+*Updated: engine#543 closed — removed from cross-module.*
+
 ## Immediate Next Step
 
-No open issues on casehub-worker. Engine#543 is now unblocked — the next work is likely there, consuming the 0.2-SNAPSHOT.
-
-## Cross-Module
-
-**We're unblocking:**
-- `engine` — engine#543 (worker primitives migration) can now proceed. casehub-worker-api 0.2-SNAPSHOT is in the local Maven repo.
+No open issues on casehub-worker. Engine#543 migration is complete — worker primitives are consumed downstream.
 
 ## References
 
