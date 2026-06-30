@@ -1,0 +1,9 @@
+branch: issue-8-exception-to-failed
+project-sha: 9d234fd6fc27225da33f3a3b69a2dd4d9c6e071e
+date: 2026-06-30
+issue: 8
+issue-repo: casehubio/casehub-worker
+covers: 8
+flyway-next-v: none
+design-repo: workspace
+design-section-hashes: 
