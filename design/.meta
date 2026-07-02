@@ -1,0 +1,9 @@
+branch: issue-9-capability-aware-execution
+project-sha: 28f39d1baf6eb8a02eb594417154915833b158ca
+date: 2026-07-02
+issue: 9
+issue-repo: casehubio/casehub-worker
+covers: 9
+flyway-next-v: none
+design-repo: workspace
+design-section-hashes: 
