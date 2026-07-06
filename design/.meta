@@ -1,0 +1,9 @@
+branch: issue-7-schema-validation
+project-sha: 991993eefc9821f29ac59de77f4780a3e0347c2c
+date: 2026-07-06
+issue: 7
+issue-repo: casehubio/casehub-worker
+covers: 7,11
+flyway-next-v: none
+design-repo: workspace
+design-section-hashes: 
