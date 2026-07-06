@@ -80,6 +80,11 @@ Foundation-tier automated task primitives — Worker, WorkerFunction, Capability
 
 type: java
 
+## Work Tracking
+
+Issue tracking: enabled
+GitHub repo: casehubio/casehub-worker
+
 ## Build & Test
 
 ```bash
