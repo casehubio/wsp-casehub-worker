@@ -1,3 +1,13 @@
+---
+layout: post
+title: "Closing the Result Model"
+date: 2026-07-01
+entry_type: note
+subtype: diary
+projects: [casehub-worker]
+tags: [worker, exception-handling, result-model, design-review]
+---
+
 # Closing the Result Model
 
 **Date:** 2026-07-01

@@ -1,7 +1,11 @@
 ---
+layout: post
 title: "Schema validation: the validation that warns"
 date: 2026-07-06
 author: mdp
+entry_type: note
+subtype: diary
+projects: [casehub-worker]
 tags: [worker, json-schema, validation, design]
 ---
 
