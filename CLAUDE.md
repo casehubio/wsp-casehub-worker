@@ -100,6 +100,11 @@ Multi-module Maven project (Quarkus 3.32.2, Java 21):
 - `runtime` — WorkerExecutor with PolicyEnforcer + OTel tracing
 - `testing` — MockWorkerExecutor + TestWorkerBuilder
 
+## Work Tracking
+
+Issue tracking: enabled
+**GitHub repo:** casehubio/casehub-worker
+
 ## Repo
 
 - Org: casehubio
