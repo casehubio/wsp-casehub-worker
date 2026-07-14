@@ -1,0 +1,9 @@
+branch: issue-5-async-worker-function
+project-sha: f1e3b0f1316d09bc1320a08a25d59eb6a9e1fe61
+date: 2026-07-14
+issue: 5
+issue-repo: casehubio/casehub-worker
+covers: 5
+flyway-next-v: none
+design-repo: project
+design-section-hashes: 
