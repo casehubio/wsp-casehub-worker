@@ -106,6 +106,11 @@ Multi-module Maven project (Quarkus 3.32.2, Java 21):
 - Repo: casehub-worker
 - GitHub Packages for Maven artifacts
 
+## Work Tracking
+
+Issue tracking: enabled
+GitHub repo: casehubio/casehub-worker
+
 ## Project Artifacts
 
 Paths that are project content (not workspace noise). Skills use this to avoid
