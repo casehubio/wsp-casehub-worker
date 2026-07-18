@@ -1,38 +1,35 @@
 # Handoff
 
-## Last Session — 2026-07-14
+## Last Session — 2026-07-17
 
-Landed `issue-10-engine-convergence` — widened WorkerExecutor from `Map<String, Object>` to `Object` input, honouring `WorkerFunction<T>`. Removed the type bottleneck in the ContextBridge pipeline. Re-scoped #10 from engine convergence to worker-side widening; created engine#726 for the delegation work. Adversarial design review (7 rounds, 5 verified fixes — strict validation, no Map escape hatch). Squashed to `f1e3b0f`, pushed. Added `## Work Tracking` to CLAUDE.md. Garden entries: GE-20260714-2b8973 (ctx.py naming inversion), GE-20260714-a2ae5d (lambda bridge checkcast technique).
+Landed `issue-5-async-worker-function` — added `WorkerFunction.Async<T>` (CompletionStage return), changed `WorkerExecutor.execute()` to return `Uni<WorkerResult>`, replaced PolicyEnforcer with SmallRye FT Guard for fault tolerance. Unified sync/async pipeline in DefaultWorkerExecutor. Adversarial design review (3 rounds, 14 issues — 8 verified, 6 accepted). Key review-driven change: executor returns Uni instead of CompletionStage. Squashed to `60e185b`, pushed to fork and upstream. Garden entry: GE-20260718-052fbc (Guard SPI in unit tests).
 
 ## Immediate Next Step
 
-Engine#726 is unblocked — Sync handler delegates to worker executor. Run `/work` on the engine repo to start.
+Engine#726 is unblocked — the engine can now build an `AsyncWorkerFunctionHandler` to dispatch non-blocking workers through the SPI. Run `/work` on the engine repo.
 
 ## What's Left
 
 - #4 WorkerContext — ambient execution state, changes WorkerFunction signature · M · Med
-- #5 Async WorkerFunction — CompletionStage execution · M · Med
 - #6 Timeout enforcement — re-scope after #8, remaining: async timeout + deadline tests · M · Med
 
 ## What's Next
 
 | # | Description | Scale | Complexity | Notes |
 |---|-------------|-------|------------|-------|
-| engine#726 | Engine Sync handler delegates to worker executor | M | Med | Unblocked by this session |
+| engine#726 | Engine Sync handler delegates to worker executor | M | Med | Unblocked — now also needs AsyncWorkerFunctionHandler |
 | #4 | WorkerContext | M | Med | Blocked by engine#237, engine#419 |
-| #5 | Async WorkerFunction | M | Med | — |
 | #6 | Timeout enforcement | M | Med | Re-scope after #8 |
 
 ## Cross-Module
 
 **Linked:**
-- engine#726 — Sync handler delegates to worker executor (NEW — created this session, unblocked)
+- engine#726 — Sync + Async handler delegates to worker executor (unblocked)
 - engine#237 — long-lived workers with lifecycle scopes. Linked to worker#4 (WorkerContext)
 - engine#419 — CaseContextProvider SPI. Linked to worker#4 (WorkerContext)
 
 ## References
 
-- Garden: `GE-20260714-2b8973` — ctx.py WORKSPACE/PROJECT naming inversion in two-repo projects
-- Garden: `GE-20260714-a2ae5d` — lambda bridge checkcast technique (strict type validation rationale)
-- Blog: `2026-07-14-mdp01-removing-the-type-bottleneck.md`
-- Spec: `docs/specs/2026-07-14-widen-executor-typed-input-design.md`
+- Garden: `GE-20260718-052fbc` — SmallRye FT Guard.create() fails in plain JUnit tests — needs standalone SPI
+- Blog: `2026-07-17-mdp02-async-workers-and-policyenforcer-funeral.md`
+- Spec: `docs/specs/2026-07-17-async-worker-function-design.md`
