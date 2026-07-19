@@ -1,0 +1,9 @@
+branch: issue-6-timeout-enforcement
+project-sha: f333ddabde47f62c322dcb3ca460de356a0d0034
+date: 2026-07-19
+issue: 6
+issue-repo: casehubio/casehub-worker
+covers: 6
+flyway-next-v: none
+design-repo: workspace
+design-section-hashes: 
