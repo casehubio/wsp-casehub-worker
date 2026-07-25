@@ -1,32 +1,23 @@
 # Handoff
 
-## Last Session — 2026-07-17
+## Last Session — 2026-07-25
 
-Landed `issue-5-async-worker-function` — added `WorkerFunction.Async<T>` (CompletionStage return), changed `WorkerExecutor.execute()` to return `Uni<WorkerResult>`, replaced PolicyEnforcer with SmallRye FT Guard for fault tolerance. Unified sync/async pipeline in DefaultWorkerExecutor. Adversarial design review (3 rounds, 14 issues — 8 verified, 6 accepted). Key review-driven change: executor returns Uni instead of CompletionStage. Squashed to `60e185b`, pushed to fork and upstream. Garden entry: GE-20260718-052fbc (Guard SPI in unit tests).
+Closed #6 (timeout enforcement) — verified all acceptance criteria were already met from incremental work across #5 (Guard-based timeout) and #8 (exception-to-Failed). No new code needed. Async timeout criterion moot after `3d11950` removed `WorkerFunction.Async` in favour of virtual threads. Also pushed `3d11950` (WorkerFunction<T,R>, WorkerResult<R>, WorkerScope) to upstream to unblock engine PR#769. Enabled issue tracking in CLAUDE.md Work Tracking section.
 
 ## Immediate Next Step
 
-Engine#726 is unblocked — the engine can now build an `AsyncWorkerFunctionHandler` to dispatch non-blocking workers through the SPI. Run `/work` on the engine repo.
+#4 (WorkerContext) is the only remaining open issue, but it's blocked by engine#237 and engine#419. No unblocked work in this repo.
 
 ## What's Left
 
-- #4 WorkerContext — ambient execution state, changes WorkerFunction signature · M · Med
-- #6 Timeout enforcement — re-scope after #8, remaining: async timeout + deadline tests · M · Med
-
-## What's Next
-
-| # | Description | Scale | Complexity | Notes |
-|---|-------------|-------|------------|-------|
-| engine#726 | Engine Sync handler delegates to worker executor | M | Med | Unblocked — now also needs AsyncWorkerFunctionHandler |
-| #4 | WorkerContext | M | Med | Blocked by engine#237, engine#419 |
-| #6 | Timeout enforcement | M | Med | Re-scope after #8 |
+- #4 WorkerContext — ambient execution state, explicit WorkerScope parameter · M · Med · Blocked by engine#237, engine#419
 
 ## Cross-Module
 
 **Linked:**
-- engine#726 — Sync + Async handler delegates to worker executor (unblocked)
-- engine#237 — long-lived workers with lifecycle scopes. Linked to worker#4 (WorkerContext)
-- engine#419 — CaseContextProvider SPI. Linked to worker#4 (WorkerContext)
+- engine#237 — long-lived workers with lifecycle scopes. Blocks worker#4
+- engine#419 — CaseContextProvider SPI. Blocks worker#4
+- engine#769 — PR unblocked by `3d11950` push to upstream
 
 ## References
 
