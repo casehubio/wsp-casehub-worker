@@ -1,26 +1,24 @@
 # Handoff
 
-## Last Session — 2026-07-25
+## Last Session — 2026-07-28
 
-Closed #6 (timeout enforcement) — verified all acceptance criteria were already met from incremental work across #5 (Guard-based timeout) and #8 (exception-to-Failed). No new code needed. Async timeout criterion moot after `3d11950` removed `WorkerFunction.Async` in favour of virtual threads. Also pushed `3d11950` (WorkerFunction<T,R>, WorkerResult<R>, WorkerScope) to upstream to unblock engine PR#769. Enabled issue tracking in CLAUDE.md Work Tracking section.
+Closed #6 (timeout enforcement) — all acceptance criteria already met from prior work. Pushed `3d11950` to upstream, unblocking engine PR#769. Created slot 36 (engine + worker) for engine#237 (lifecycle scopes). Confirmed engine#419 (CaseContextProvider SPI) is CLOSED — #4 is blocked by engine#237 only. Logged idea: hybrid failure recovery (replay for orchestrated flows + context re-evaluation for choreographed flows).
 
 ## Immediate Next Step
 
-#4 (WorkerContext) is the only remaining open issue, but it's blocked by engine#237 and engine#419. No unblocked work in this repo.
+Work engine#237 in slot 36 (`/Users/mdproctor/claude/casehub/worktrees/36/engine`). Run `work-start` there — scaffold exists, resume path will fire.
 
 ## What's Left
 
-- #4 WorkerContext — ambient execution state, explicit WorkerScope parameter · M · Med · Blocked by engine#237, engine#419
+- #4 WorkerContext — ambient execution state, explicit WorkerScope parameter · M · Med · Blocked by engine#237 only
 
 ## Cross-Module
 
-**Linked:**
-- engine#237 — long-lived workers with lifecycle scopes. Blocks worker#4
-- engine#419 — CaseContextProvider SPI. Blocks worker#4
-- engine#769 — PR unblocked by `3d11950` push to upstream
+**Blocked by:**
+- engine#237 — long-lived workers with lifecycle scopes (CASE/STAGE/BINDING). Blocks worker#4. Slot 36 created. · L · High
 
 ## References
 
-- Garden: `GE-20260718-052fbc` — SmallRye FT Guard.create() fails in plain JUnit tests — needs standalone SPI
-- Blog: `2026-07-17-mdp02-async-workers-and-policyenforcer-funeral.md`
-- Spec: `docs/specs/2026-07-17-async-worker-function-design.md`
+- Idea: hybrid failure recovery — `IDEAS.md` (2026-07-28)
+- Garden: `GE-20260718-052fbc` — SmallRye FT Guard.create() fails in plain JUnit tests
+- Slot: `/Users/mdproctor/claude/casehub/worktrees/36/` (engine + worker, issue-237-lifecycle-scopes)
