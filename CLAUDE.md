@@ -57,13 +57,11 @@ The file path determines the repo: if the file lives under the workspace path, u
 |------------|-------------|-------|
 | adr        | project     | lands in `docs/adr/` — promoted at work end |
 | specs      | project     | lands in `docs/specs/` — promoted at work end |
-| blog       | workspace   | staged here; published to mdproctor.github.io via publish-blog at work end |
+| blog       | project     | lands in docs/blog/ — promoted at work end |
 | plans      | workspace   | stay in workspace permanently |
 | design     | workspace   | epic journal stays in workspace |
 | snapshots  | workspace   | stay in workspace permanently |
 | handover   | workspace   | |
-
-**Blog directory:** `/Users/mdproctor/claude/public/casehub/worker/blog/`
 
 ## Context Management
 
@@ -83,12 +81,12 @@ Foundation-tier automated task primitives — Worker, WorkerFunction, Capability
 ## Repo Guide
 
 This repo owns its own documentation, synced to parent via CI:
-- `docs/consumer-guide.md` — for app builders: modules, APIs, quick start
-- `docs/contributor-guide.md` — for platform builders: architecture, SPIs, internals
+- `docs/guides/consumer-guide.md` — for app builders: modules, APIs, quick start
+- `docs/guides/contributor-guide.md` — for platform builders: architecture, SPIs, internals
 
 Update the relevant guide in the same session when implementation changes modules, SPIs, or public APIs. Do not defer — drift compounds.
 
-Read `consumer-guide.md` for app-level work. Only read `contributor-guide.md` when modifying this repo's internals or extension points.
+Read `docs/guides/consumer-guide.md` for app-level work. Only read `docs/guides/contributor-guide.md` when modifying this repo's internals or extension points.
 
 ## Project Type
 
